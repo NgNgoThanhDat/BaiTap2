@@ -1,0 +1,70 @@
+
+html, body {
+	height: 100%
+}
+img {
+	max-width: 100%;
+}
+
+#cover {
+	background: #222 url('../img/4.jpg') bottom center no-repeat;
+	background-size: cover;
+	color: #fff;
+	height:100%;
+	text-align: center;
+	display:  flex;
+	align-items: center;
+}
+
+#cover-caption {
+	width: 100%;
+}
+
+#cover .form-inline  .form-group {
+	margin-right: 5px;
+
+}
+
+.section-content {
+	padding: 80px 0;
+}
+
+#footer-main {
+	background-color: #222;
+	color: #fff;
+	font-size: 0.8rem;
+	padding: 2.5rem;
+
+}
+
+#dangnhap {
+	margin-right: 5px;
+}
+
+#fDangNhap {
+	margin: 10px auto;
+	padding: 10px 10px;
+	border: 1px solid #988177;
+	align-items: center;
+	text-align: center;
+	display:  flex;
+}
+
+
+ul #Tieude {
+	margin: 0;
+    padding: 0;
+    overflow: hidden;
+    list-style-type: none;
+}
+
+ul #Tieude li p{
+	display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+ul #Tieude li {
+    float: left;
+}

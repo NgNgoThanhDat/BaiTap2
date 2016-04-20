@@ -1,0 +1,59 @@
+extends layout
+
+
+block content
+  if !(session.isLoggedIn)
+    .section-content
+      .container
+        h2 Là một cộng đồng năng động
+        p.lead  Có hàng ngàn trường đại học trên cả nước, có hàng ngàn sinh viên đã và đang cần 1 cộng đồng chia sẽ kinh nghiệm, kiến thức, phương pháp học hiệu quả, hay đơn giản là kết bạn khắp miền đất nước.
+        .row
+          .col-sm-12
+            .card-group
+              .card
+                .card-block
+                  h4.card-subtitle Chia sẽ &amp; nhận lại
+                  //- h6.card-subtitle Support card subtitle
+                img(src="/img/communicate 1.jpg", alt="Chia sẽ ý tưởng")
+                .card-block
+                  p.card-text Nơi bạn gặp gỡ những người có cùng chí hướng, sẵn sàng chia sẽ những ý tưởng.
+              .card
+                .card-block
+                  h4.card-subtitle Kết nối 
+                  //- h6.card-subtitle Support card subtitle
+                img(src="/img/communicate 2.jpg", alt="Chia sẽ ý tưởng")
+                .card-block
+                  p.card-text Kết nối tất cả các trường đại học trên cả nước.
+              .card
+                .card-block
+                  h4.card-subtitle Nói ra suy nghĩ
+                  //- h6.card-subtitle Support card subtitle
+                img(src="/img/communicate 3.jpg", alt="Chia sẽ ý tưởng")
+                .card-block
+                  p.card-text Nơi suy nghĩ của bạn được tôn trọng
+  else
+    .container
+      .row
+        .col-sm-5.col-md-3
+          .dropdown
+            button(type="button", class="btn btn-primary") Soan thư
+            a(class="dropdown-item", href="#") Hộp thư đến
+            a(class="dropdown-item", href="#") Bạn bè
+            a(class="dropdown-item", href="#") Thư đã gửi
+        .col-sm-5.col-sm-offser-2.col-md-7.col-md-offset-0
+          ul#Email
+            ul#Tieude
+              li
+                p Người gửi
+              li
+                p Nội dung
+              li
+                p Ngày gửi
+            ul#Tieude
+              li
+                p Phùng Văn Dũng
+              li
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit
+              li
+                p 15/2/2016
+                  

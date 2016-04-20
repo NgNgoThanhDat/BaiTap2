@@ -1,0 +1,45 @@
+extends layout
+
+block content
+		.container#fDangNhap
+			#col-sm-6.col-sm-offser-1
+				h3 Đăng ký
+				if exists
+					.error 
+						| Tên đăng nhập tồn tại. Bạn đang cố gắng a(href="/login") Đăng Nhập
+						|.?
+				if invalid
+					.error Bạn điền đầy đủ vào thông tin đăng ký
+				form(method='post', acction='/signup', enctype='application/x-www-form-urlencoded' )
+					.form-group.row
+						label(for="inputName", class="col-sm-2 form-control-label") Họ và tên
+						.col-sm-10
+							input(name='Name', type='text', class='form-control', id='inputName', placeholder='Họ và tên')
+					.form-group.row
+						label(for="inputEmail3", class="col-sm-2 form-control-label") Email
+						.col-sm-10
+							input(name='email1', type='email', class='form-control', id='inputEmail3', placeholder='Email')
+					.form-group.row
+						label(for="inputPassword3", class="col-sm-2 form-control-label") Mật khẩu
+						.col-sm-10
+							input(name="pass",type="password", class="form-control", id="inputPassword3", placeholder="Password")
+					.form-group.row
+						.col-sm-offser-2.col-sm-10
+							button(type="submit", class="btn btn-secondary") Đăng nhập
+	//- form(method='post', acction='/signup', enctype='application/x-www-form-urlencoded' )
+	//- 	h3 Sign up
+	//- 	if exists
+	//- 		.error
+	//- 			| that user exists. Are you trying to 
+	//- 			a(href="/login") Login
+	//- 			| ?
+	//- 	if invalid 
+	//- 		.error Please enter a valid email address and password.
+	//- 	ul
+	//- 		li
+	//- 			label(for='email') Email
+	//- 			input#email(name='email')
+	//- 		li
+	//- 			label(for='pass') Password
+	//- 			input#pass(name='pass')
+	//- 	input(type='submit', value='Sign Up')
