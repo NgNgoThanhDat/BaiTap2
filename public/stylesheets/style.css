@@ -41,13 +41,49 @@ img {
 	margin-right: 5px;
 }
 
-#fDangNhap {
-	margin: 10px auto;
-	padding: 10px 10px;
-	border: 1px solid #988177;
-	align-items: center;
-	text-align: center;
+#ccontent {
+	margin: 20px 40px;
+	padding: 10px 30px;	
+	border: 1px solid #D6DAC2;
+	background-color: #ffffff;
+}
+
+.content {
+	background: #F6F7F2;
+}
+
+#fDangNhap {	
+	margin-left: 350px;	
 	display:  flex;
+	align-items: center;	
+}
+
+#fDangNhap h3 {
+	margin-bottom: 20px;
+	padding-bottom: 10px;	
+	border-bottom: 1px solid #988177;
+}
+
+.col-sm-offser-2.col-sm-8 {
+	padding-left: 0px;
+	padding-right: 0px;
+	width: 400px;	
+	overflow: auto;	
+}
+
+#cancel {
+	margin-left: 155px;	
+	float: left;
+}
+
+#signUp {
+	float: right;
+	margin-right: 20px;
+}
+
+#logIn {
+	float: right;
+	margin-right: 20px;
 }
 
 

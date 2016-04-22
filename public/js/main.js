@@ -1,11 +1,11 @@
-$(function () {
+$(document).ready(function () {
 
 
 	$("#dangnhap").click( function() {
-		 window.location.href='/signup';
-	})
+		 window.location.href='/login';
+	});
 
 	$("#dangky").click( function () {
-		window.location.href='/login';
-	})
-})
+		window.location.href='/signup';
+	});
+});

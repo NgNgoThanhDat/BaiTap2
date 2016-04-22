@@ -3,30 +3,43 @@ extends layout
 block content
 		.container#fDangNhap
 			#col-sm-6.col-sm-offser-1
-				h3 Đăng ký
-				if exists
-					.error 
-						| Tên đăng nhập tồn tại. Bạn đang cố gắng a(href="/login") Đăng Nhập
-						|.?
-				if invalid
-					.error Bạn điền đầy đủ vào thông tin đăng ký
-				form(method='post', acction='/signup', enctype='application/x-www-form-urlencoded' )
-					.form-group.row
-						label(for="inputName", class="col-sm-2 form-control-label") Họ và tên
-						.col-sm-10
-							input(name='Name', type='text', class='form-control', id='inputName', placeholder='Họ và tên')
-					.form-group.row
-						label(for="inputEmail3", class="col-sm-2 form-control-label") Email
-						.col-sm-10
-							input(name='email1', type='email', class='form-control', id='inputEmail3', placeholder='Email')
-					.form-group.row
-						label(for="inputPassword3", class="col-sm-2 form-control-label") Mật khẩu
-						.col-sm-10
-							input(name="pass",type="password", class="form-control", id="inputPassword3", placeholder="Password")
-					.form-group.row
-						.col-sm-offser-2.col-sm-10
-							button(type="submit", class="btn btn-secondary") Đăng nhập
-	//- form(method='post', acction='/signup', enctype='application/x-www-form-urlencoded' )
+				#ccontent
+					h3 Đăng ký
+					if exists
+						.error 
+							| Tên đăng nhập tồn tại. Bạn đang cố gắng a(href="/login") Đăng Nhập
+							|.?
+					if invalid
+						.error Bạn điền đầy đủ vào thông tin đăng ký
+					form(method='post', acction='/signup', enctype='application/x-www-form-urlencoded' )
+						.form-group.row
+							label(for="inputName", class="col-sm-4 form-control-label") Họ và tên
+							.col-sm-8
+								input(name='Name', type='text', class='form-control', id='inputName', placeholder='Họ và tên')
+						.form-group.row
+							label(for="inputEmail3", class="col-sm-4 form-control-label") Email
+							.col-sm-8
+								input(name='email1', type='email', class='form-control', id='inputEmail3', placeholder='Email')
+						.form-group.row
+							label(for="inputPassword3", class="col-sm-4 form-control-label") Mật khẩu
+							.col-sm-8
+								input(name="pass",type="password", class="form-control", id="inputPassword3", placeholder="Password")
+						.form-group.row
+							//label(for="btn-dangky", class="col-sm-4 form-control-label")
+							.col-sm-offser-2.col-sm-8
+								#cancel							
+									button(type="submit", class="btn btn-primary") Hủy	
+								#signUp
+									button(type="submit", class="btn btn-primary") Đăng ký
+
+
+
+
+
+
+												
+						
+	//- form(method='post', acction='/signup', enctype='application/x-www-form-urlencoded' )btn-lg btn-block
 	//- 	h3 Sign up
 	//- 	if exists
 	//- 		.error
