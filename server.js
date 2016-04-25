@@ -11,7 +11,7 @@ var app = express ();
 
  	console.log('Coneccted!');
  	routes(app);
- 	app.listen(3000,function (req, res) {
- 		console.log('Now listening on http://localhost:3000');
+ 	app.listen(8080,function (req, res) {
+ 		console.log('Now listening on http://localhost:8080');
  	});
  });
