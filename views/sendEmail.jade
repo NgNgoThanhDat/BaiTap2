@@ -1,19 +1,37 @@
 extends layout
 
 block content
+    .container.container-M
+      .alert.alert-success(role='alert')
+        strong Well done!
+        |  You successfully read this important alert message.
     .container
       .modal-content
         .modal-header
           button(type="button", class="close", data-dismiss="modal", aria-label="Close")
             span(aria-hidden="true") &times;
           h4.modal-title Nội dung
-        form
-          .form-group
-            label( for="recipient-name", class="form-control-label") Người nhận:
-            input(type="text", class="form-control", id="recipient-name")
-          .form-group
-            label(for="message-text", class="form-control-label") Message:
-            textarea(class="form-control", id="message-text")
-        .modal-footer
-          button(type="button", class="btn btn-secondary", data-dismiss="modal") Hủy
-          button(type="button", class="btn btn-primary") Gửi
+        if session.isLoggedIn
+          .col
+            label( for="recipient-name", class="form-control-label") Người nhận
+            .container
+              .col-sm-10
+                ul.ListSentEmail
+              .col-sm-2
+                .dropdown
+                  button.dropbtn Add Friend
+                  .dropdown-content
+                    -each friend in listFriend
+                        a.list-group-item(id="AddFriend", values='#{friend.friendName}')= friend.friendName
+                          button.btn-sm.btn-danger(values='#{friend.friendName}', class='pull-sm-right') +
+            button.btn-sm.btn-danger.clear clear all
+            .form-group
+              .form-group-content
+                label(for="message-text", class="form-control-label") Message:
+                textarea(name="NoiDung",class="form-control", id="message-text")
+          .modal-footer
+            .modal-footer-SendEmail
+              button(id="Cancel",type="button", class="btn btn-secondary", data-dismiss="modal") Hủy
+              button(id ="send",type="button", class="btn btn-primary") Gửi
+        else
+              label(for="message-text", class="form-control-label") Bạn chưa đăng nhập.

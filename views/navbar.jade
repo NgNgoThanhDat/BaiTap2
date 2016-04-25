@@ -1,19 +1,22 @@
 nav.navbar.navbar-dark.bg-inverse.navbar-full#nav-main
-  a(class="navbar-brand", href="#") LoGo
-  ul.nav.navbar-nav
-    li.nav-item.active
-      a(class="nav-link", href="#") Home 
-        span.sr-only (curent) 
-    li.nav-item
-      a(class="nav-link", href="#") Features
-    li.nav-item
-      a(class="nav-link", href="#") Pricing
-    li.nav-item
-      a(class="nav-link", href="#") About
-  form.form-inline.pull-xs-right
-    section.login
-      if session.isLoggedIn
-        button(class="btn btn-success-outline", type="submit") Đăng Xuất
-      else
-        button(id="dangnhap",class="btn btn-success-outline", type="button") Đăng nhập
-        button(id="dangky",class="btn btn-success-outline", type="submit") Đăng ký
+  .col-sm-8
+    a(class="navbar-brand", href="#") LoGo
+    ul.nav.navbar-nav
+      li.nav-item.active
+        a(class="nav-link", href="/") Home 
+          span.sr-only (curent) 
+  .col-sm-4
+    form.form-inline
+      section.login
+        -var name = session.user;
+        if session.isLoggedIn
+          form(class="form-inline")
+            .row
+              .col-sm-9
+                h4
+                  span(class="label label-default pull-xs-right", style="font-size: 0.9em;margin-top: 3px; margin-right: 5px;")= name
+              .col-sm-3
+                button(id="dangxuat", class="btn btn-success-outline pull-xs-right", type="button") Đăng Xuất
+        else
+          button(id="dangnhap",class="btn btn-success-outline", type="button") Đăng nhập
+          button(id="dangky",class="btn btn-success-outline", type="button") Đăng ký

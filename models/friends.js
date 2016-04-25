@@ -4,8 +4,8 @@ var Schema = mongoose.Schema;
 
 var UserSchema = new Schema ({
 	name: String,
-	email: String,
-	password: String,
+	friendName: String,
+	trangthai: Number
 })
 
-module.exports = mongoose.model('User2', UserSchema);
+module.exports = mongoose.model('friends', UserSchema);

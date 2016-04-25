@@ -1,9 +1,13 @@
 extends layout
 
 block content
-			.container#fDangNhap
-				#col-sm-6.col-sm-offser-1
-					h3 Đăng nhập
+			.container#container-login
+				.col-sm-3
+				.col-sm-6.col-sm-offser-1
+					h2 Đăng nhập
+					if invalid 
+						.alert.alert-danger(role='alert')
+							strong Please enter a valid email address and password.
 					form(method='post', action='login', enctype='application/x-www-form-urlencoded')
 						.form-group.row
 							label(for="inputEmail3", class="col-sm-2 form-control-label") Email
@@ -14,5 +18,5 @@ block content
 							.col-sm-10
 								input(name="pass",type="password", class="form-control", id="inputPassword3", placeholder="Password")
 						.form-group.row
-							.col-sm-offser-2.col-sm-10
-								button(type="submit", class="btn btn-secondary") Đăng nhập
+							.col-sm-offser-2.col-sm-4
+								button(type="submit", class="btn btn-primary ") Đăng nhập
