@@ -1,14 +1,17 @@
-// var errors = require ('./errors.js')
-var login = require ('./login');
-var middleware = require('../middleware/index');
+var errors = require ('./errors.js')
+    login = require ('./login'),
+    middleware = require('../middleware/index'),
+    home = require('./home'),
+    friend = require('./friend'),
+    Email = require('./Email');
+
 
 module.exports = function(app)
 {
 	middleware(app);
-	app.get('/', function(req, res) {
-		res.render('home.jade');
-	});
-
+  home(app);
 	login(app);
-	// errors(app);
+  friend(app);
+  Email(app);
+	errors(app);
 }

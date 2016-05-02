@@ -1,0 +1,31 @@
+extends layout
+
+block content
+    .container-E
+    .container(style="margin: 30px auto;")
+      .col-sm-9
+        .modal-content
+          .modal-header
+            .coladdfriend
+              label( for="recipient-name", class="form-control-label") 
+                h4 Người nhận
+              .container#UlSentEmail
+                  ul.ListSentEmail
+              button.btn-sm.btn-danger.clear Xóa hết người nhận
+              .form-group(style="margin-top: 30px;")
+                .form-group-content
+                  label(for="message-text", class="form-control-label") 
+                    h4 Nội dung tin nhắn
+                  textarea(name="NoiDung",class="form-control", id="message-text")
+              .modal-footer
+                .modal-footer-SendEmail
+                  button(id="Cancel",type="button", class="btn btn-secondary", data-dismiss="modal") Hủy
+                  button(id ="send",type="button", class="btn btn-primary") Gửi
+      .col-sm-3
+        .dropdown
+          button.dropbtn 
+            p Thêm người nhận
+          .dropdown-content
+            -each friend in listFriend
+              a.list-group-item(id="AddFriend", values='#{friend.friendName}')= friend.friendName
+                button.btn-sm.btn-danger(values='#{friend.friendName}', class='pull-sm-right') +

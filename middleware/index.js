@@ -1,21 +1,19 @@
 var express = require('express'),
-	cookieParser = require('cookie-parser');
-	var session = require('express-session');
-	var bodyParser = require('body-parser')
+	cookieParser = require('cookie-parser'),
+	session = require('express-session'),
+	bodyParser = require('body-parser');
 
 
 module.exports = function(app)
 {
  	app.use(cookieParser());
-
+  app.use(express.static('public'));
  	app.use(session ({
-		secret: 'building a blog',
+		secret: 'building a app',
 		resave: true,
 		saveUninitialized: true
 	}));
-
  	app.use(bodyParser.urlencoded({ extended: true}));
-
 	app.use(bodyParser.json());
 
  	app.use( function (req, res, next) {
