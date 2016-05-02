@@ -1,22 +1,24 @@
 extends layout
 
 block content
-			.container#fDangNhap
-				#col-sm-6.col-sm-offser-1
-					#ccontent
-						h3 Đăng nhập
-						form(method='post', action='login', enctype='application/x-www-form-urlencoded')
-							.form-group.row
-								label(for="inputEmail3", class="col-sm-4 form-control-label") Email
-								.col-sm-8
-									input(name='email1', type='email', class='form-control', id='inputEmail3', placeholder='Email')
-							.form-group.row
-								label(for="inputPassword3", class="col-sm-4 form-control-label") Mật khẩu
-								.col-sm-8
-									input(name="pass",type="password", class="form-control", id="inputPassword3", placeholder="Password")
-							.form-group.row
-								.col-sm-offser-2.col-sm-8
-									#cancel						
-										button(type="submit", class="btn btn-primary") Hủy	
-									#logIn
-										button(type="submit", class="btn btn-primary") Đăng nhập
+			.container#container-login
+				.col-sm-3
+				.col-sm-6.col-sm-offser-1#log_sign
+					h2 Đăng nhập
+					if invalid 
+						.alert.alert-danger(role='alert')
+							strong Please enter a valid email address and password.
+					form(method='post', action='login', enctype='application/x-www-form-urlencoded')
+						.form-group.row
+							label(for="inputEmail3", class="col-sm-2 form-control-label") Email
+							.col-sm-10
+								input(name='email1', type='email', class='form-control', id='inputEmail3', placeholder='Email')
+						.form-group.row
+							label(for="inputPassword3", class="col-sm-2 form-control-label") Mật khẩu
+							.col-sm-10
+								input(name="pass",type="password", class="form-control", id="inputPassword3", placeholder="Password")
+						.form-group.row(style="margin-left: 395px;")
+							.col-sm-offser-2.col-sm-4
+								button(type="submit", class="btn btn-primary ") Đăng nhập							
+							//.col-sm-offser-2.col-sm-4
+								//button(type="submit",class="btn btn-primary ") Hủy

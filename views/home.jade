@@ -5,55 +5,63 @@ block content
   if !(session.isLoggedIn)
     .section-content
       .container
-        h2 Là một cộng đồng năng động
-        p.lead  Có hàng ngàn trường đại học trên cả nước, có hàng ngàn sinh viên đã và đang cần 1 cộng đồng chia sẽ kinh nghiệm, kiến thức, phương pháp học hiệu quả, hay đơn giản là kết bạn khắp miền đất nước.
+        h2 Là một cộng đồng tiềm năng
+        p.lead  Cung cấp giải pháp gửi email an toàn bảo mật, tìm bạn một cách nhanh chóng và dễ dàng.
         .row
           .col-sm-12
             .card-group
               .card
                 .card-block
-                  h4.card-subtitle Chia sẽ &amp; nhận lại
+                  h4.card-subtitle An toàn 
                   //- h6.card-subtitle Support card subtitle
                 img(src="/img/communicate 1.jpg", alt="Chia sẽ ý tưởng")
                 .card-block
-                  p.card-text Nơi bạn gặp gỡ những người có cùng chí hướng, sẵn sàng chia sẽ những ý tưởng.
+                  p.card-text Cung cấp 1 giải pháp gửi email mới an toàn hơn
               .card
                 .card-block
-                  h4.card-subtitle Kết nối 
+                  h4.card-subtitle Bảo mật 
                   //- h6.card-subtitle Support card subtitle
                 img(src="/img/communicate 2.jpg", alt="Chia sẽ ý tưởng")
                 .card-block
-                  p.card-text Kết nối tất cả các trường đại học trên cả nước.
+                  p.card-text Thông tin sẽ được ẩn danh và bảo mật
               .card
                 .card-block
-                  h4.card-subtitle Nói ra suy nghĩ
+                  h4.card-subtitle Cộng đồng tiềm năng
                   //- h6.card-subtitle Support card subtitle
                 img(src="/img/communicate 3.jpg", alt="Chia sẽ ý tưởng")
                 .card-block
-                  p.card-text Nơi suy nghĩ của bạn được tôn trọng
-  else
-    .container
+                  p.card-text Tiềm năng phát triền cộng đồng cao.
+  else    
+    .container#container-home
       .row
-        .col-sm-5.col-md-3
+        .col-sm-2.col-sm-offset-1
           .dropdown
-            button(type="button", class="btn btn-primary") Soan thư
-            a(class="dropdown-item", href="#") Hộp thư đến
-            a(class="dropdown-item", href="#") Bạn bè
-            a(class="dropdown-item", href="#") Thư đã gửi
-        .col-sm-5.col-sm-offser-2.col-md-7.col-md-offset-0
-          ul#Email
-            ul#Tieude
-              li
-                p Người gửi
-              li
-                p Nội dung
-              li
-                p Ngày gửi
-            ul#Tieude
-              li
-                p Phùng Văn Dũng
-              li
-                p Lorem ipsum dolor sit amet, consectetur adipisicing elit
-              li
-                p 15/2/2016
-                  
+            button(id="taotinnhan",type="button", class="btn btn-primary") Soan thư
+            a(class="dropdown-item", href="/#nav-main") Hộp thư đến
+            a(class="dropdown-item", href="/showFriends") Bạn bè
+            a(class="dropdown-item", href="/sent") Thư đã gửi
+        .col-sm-8#row-content          
+          .row            
+            .col-sm-3.col-xs-6 
+              h4  NGƯỜI GỬI
+            .col-sm-6.col-xs-6 
+              h4  NỘI DUNG
+            .col-sm-3.col-xs-6 
+              h4  NGÀY
+          .row    
+            -each item in listEmail
+                -each nguoigui in listFriend
+                  -if (item.nguoigui == nguoigui.friendName)
+                    -if (nguoigui.trangthai == 1)
+                      -if (item.trangthai == "1")
+                          .HomeEmailCSS(id="#{item._id}",style="margin: 10px 0px;border-top: 2px solid;background-color: #FFF;display: flex;")
+                            .col-sm-3.col-xs-6= item.nguoigui
+                            .col-sm-6.col-xs-6
+                              p(style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;")= item.noidung
+                            .col-sm-3.col-xs-6= item.ngay
+                      -else
+                          .HomeEmailCSS(id="#{item._id}",style="margin: 10px 0px;border-top: 2px solid;background-color: #F4F4F4;display: flex;")
+                            .col-sm-3.col-xs-6= item.nguoigui
+                            .col-sm-6.col-xs-6
+                              p(style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;")= item.noidung
+                            .col-sm-3.col-xs-6= item.ngay                 

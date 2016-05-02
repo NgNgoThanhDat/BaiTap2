@@ -1,0 +1,33 @@
+extends layout
+
+block content
+  .container#container-M
+  .container#container-friend
+    .col-md-8
+      .list-group.AddFriend
+        a.list-group-item.active Danh sách bạn bè
+        -each user in listFiend
+          -if (user.trangthai != 1)
+            a.list-group-item(style="height: 56px;")= user.friendName
+              button.btn.btn-danger(style="margin-left: 10px;",id="Delete",values="#{user._id}",type='button',class="pull-sm-right") Delete        
+              button.btn.btn-danger(id="UnBlock",values="#{user._id}",type='button',class="pull-sm-right") UnBlock
+          -else 
+            a.list-group-item(style="height: 56px;")= user.friendName
+              button.btn.btn-danger(style="margin-left: 10px;",id="Delete",values="#{user._id}",type='button',class="pull-sm-right") Delete        
+              button.btn.btn-danger(id="Block",values="#{user._id}",type='button',class="pull-sm-right") Block
+              
+    .col-md-4
+      .list-group
+        a.list-group-item.active(href='#')
+          | Danh sách người dùng
+          -each user in listUser
+            -if (user.name !== session.user) 
+              -var flag = 0;
+              -each friend in listFiend
+                -if (user.name === friend.friendName) 
+                    -flag = 1;
+              -if (flag != 1)
+                a.list-group-item(style="height: 56px;",values=('#{user.name}'))= user.name
+                  button.add-button.btn.btn-danger(id='AddFriend',values='#{user._id}' class="pull-sm-right") Thêm bạn
+            
+          
