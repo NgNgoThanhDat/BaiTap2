@@ -25,7 +25,7 @@ $(document).ready(function() {
 			var ThongBao = "BlockFriend";
 			$(this).text("UnBlock");
 			var request = $.ajax({
-					url: "http://localhost:3000/showFriends",
+					url: "/showFriends",
 					type: "PUT",
 					data: {
 							ThongBao: ThongBao,
@@ -45,7 +45,7 @@ $(document).ready(function() {
 			$(this).text("Block");
 
 			var request = $.ajax({
-					url: "http://localhost:3000/showFriends",
+					url: "/showFriends",
 					type: "PUT",
 					data: {
 							ThongBao: ThongBao,
@@ -63,7 +63,7 @@ $(document).ready(function() {
 			var ThongBao = "DeleteFriend";
 			var that = this;
 			var request = $.ajax({
-					url: "http://localhost:3000/showFriends",
+					url: "/showFriends",
 					type: "DELETE",
 					data: {
 							ThongBao: ThongBao,
@@ -104,7 +104,7 @@ $(document).ready(function() {
 			$('#container-M').append(newM);
 			$(newM).fadeOut(1500);
 			var request = $.ajax({
-					url: "http://localhost:3000/showFriends",
+					url: "/showFriends",
 					type: "POST",
 					data: {
 							ThongBao: ThongBao,
@@ -170,7 +170,7 @@ $(document).ready(function() {
 				console.log(NoiDung);
 
 				var request = $.ajax({
-						url: "http://localhost:3000/sendEmail",
+						url: "/sendEmail",
 						type: "POST",
 						data: {
 								tempFriend: tempFriend,
@@ -211,7 +211,7 @@ $(document).ready(function() {
 				var d = new Date();
 				var date = d.toLocaleString();
 				var request = $.ajax({
-						url: "http://localhost:3000/",
+						url: "/",
 						type: "PUT",
 						data: {
 								ThongBao: ThongBao,
