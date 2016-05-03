@@ -1,5 +1,6 @@
 {
   "name": "bai tap 2",
   "description": "A simple web",
-  "repository": "https://github.com/NgNgoThanhDat/BaiTap2.git"
+  "repository": "https://github.com/NgNgoThanhDat/BaiTap2.git",
+  "addons": ["mongolab"]
 }

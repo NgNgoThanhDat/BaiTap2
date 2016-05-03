@@ -18,9 +18,8 @@
     "jade": "^1.11.0",
     "mongoose": "^4.4.14"
   },
-  "keywords": {
-    "node",
-    "express",
-    "Heroku"
+  "homepage": "https://dry-ocean-94983.herokuapp.com/",
+  "engines": {
+    "node": "4.4.3"
   }
 }
