@@ -6,7 +6,12 @@ var express = require('express')
 var app = express ();
 var port = Number(process.env.PORT || 3000);
 
-mongoose.connect ('mongodb://localhost', function (err) {
+var uristring =
+  process.env.MONGOLAB_URI ||
+  process.env.MONGOHQ_URL ||
+  'mongodb://localhost';
+
+mongoose.connect (uristring, function (err) {
  	if(err) throw err;
  	console.log('Coneccted!');
  	routes(app);

@@ -1,11 +1,13 @@
 {
   "name": "baitap2",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": " A simple web to send email",
+  "main": "server.js",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": "https://github.com/NgNgoThanhDat/BaiTap2.git",
   "author": "1312098_1312123",
   "license": "ISC",
   "dependencies": {
@@ -15,5 +17,10 @@
     "express-session": "^1.13.0",
     "jade": "^1.11.0",
     "mongoose": "^4.4.14"
+  },
+  "keywords": {
+    "node",
+    "express",
+    "Heroku"
   }
 }
