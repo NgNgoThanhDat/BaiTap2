@@ -1,0 +1,24 @@
+extends layout
+
+block content
+      .container
+        .row
+          .col-sm-12#row-content
+            .row
+              .col-sm-3.col-xs-6 Người nhận
+              .col-sm-6.col-xs-6 Nội dung
+              .col-sm-3.col-xs-6 Thời gian đọc
+            .row
+              each item in results
+                if (item.trangthai == "1")
+                  .EmailSent(style="margin: 10px 0px;border-top: 2px solid;background-color: #FFF;display: flex;")
+                    .col-sm-3.col-xs-6= item.nguoinhan
+                    .col-sm-6.col-xs-6
+                      p(style="word-wrap: break-word;")= item.noidung
+                    .col-sm-3.col-xs-6= item.thoigiandoc
+                else
+                  .EmailSent(style="margin: 10px 0px;border-top: 2px solid;background-color: #FFF;display: flex;")
+                    .col-sm-3.col-xs-6= item.nguoinhan
+                    .col-sm-6.col-xs-6
+                      p(style="word-wrap: break-word;")= item.noidung
+                    .col-sm-3.col-xs-6 Chưa đọc
