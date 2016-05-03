@@ -9,7 +9,7 @@ var port = Number(process.env.PORT || 3000);
 var uristring =
   process.env.MONGOLAB_URI ||
   process.env.MONGOHQ_URL ||
-  'mongodb://localhost';
+  'mongodb://dungvatoi12@gmail.com:vandung12@localhost:3000/';
 
 mongoose.connect (uristring, function (err) {
  	if(err) throw err;
