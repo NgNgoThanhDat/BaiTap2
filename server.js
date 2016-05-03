@@ -12,7 +12,7 @@ var uristring =
   'mongodb://localhost';
 
 mongoose.connect (uristring, function (err) {
- 	// if(err) throw err;
+ 	if(err) throw err;
  	console.log('Coneccted!');
  	routes(app);
  	app.listen(port,function (req, res) {
